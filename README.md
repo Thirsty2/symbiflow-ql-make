@@ -5,8 +5,14 @@ cd dockerfiles
 docker build . -t symbiflow-ql-make
 ```
 The above assumes Docker can find an image called symbiflow-ql:latest.  
+If you don't currently have symbiflow-ql:latest, you can build it from the 
+Dockerfile.use-installer and the instructions found here:
+https://github.com/QuickLogic-Corp/quicklogic-fpga-toolchain
 
-You can base the build on a particular image using the --build-arg PARENT_IMAGE param:
+Once you have a symbiflow-ql:latest image the docker build command above will work.
+
+If you have a different tagged image of symbiflow-ql, 
+you can base the build on a particular image using the --build-arg PARENT_IMAGE param:
 ```
 docker build --build-arg PARENT_IMAGE="symbiflow-ql:1.3.0" . -t symbiflow-ql-make
 ```
